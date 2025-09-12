@@ -63,7 +63,7 @@ const showCardItems = (plants) => {
         cardsContainer.innerHTML += `
             <div class="card-body p-0 bg-white  shadow-md">
                 <div class="img-box w-full ">
-                    <img src="${plants.image}" alt="" class="w-full max-h-50 object-cover rounded-tl-lg rounded-tr-lg">
+                    <img src="${plants.image}" alt="" class="w-full h-50 object-cover rounded-tl-lg rounded-tr-lg">
                 </div>
                 <div class="p-3 w-full">
                     <h2 class="card-title font-bold">${plants.name}</h2>
@@ -108,7 +108,7 @@ const showAllPlants = (allPlants) => {
         
         <div class="card-body p-0 bg-white  shadow-md">
                 <div class="img-box w-full ">
-                    <img src="${plants.image}" alt="" class="w-full max-h-50 object-cover rounded-tl-lg rounded-tr-lg">
+                    <img src="${plants.image}" alt="" class="w-full h-50 object-cover rounded-tl-lg rounded-tr-lg">
                 </div>
                 <div id = "${plants.id}" class="p-3 w-full">
                     <h2 class="card-title font-bold">${plants.name}</h2>
@@ -195,11 +195,11 @@ const showItemDetails = (plants) => {
     modalContainer.innerHTML = `
         <div class="card-body p-0 bg-white  shadow-md">
             <div class="img-box w-full ">
-                <img src="${plants.image}" alt="" class="w-full max-h-50 object-cover rounded-tl-lg rounded-tr-lg">
+                <img src="${plants.image}" alt="" class="w-full h-50 object-cover rounded-tl-lg rounded-tr-lg">
             </div>
             <div class="p-3 w-full">
                 <h2 class="card-title font-bold">${plants.name}</h2>
-                
+                <p class="text-justify my-3">${plants.description}</p>
                 <div class="font-bold">
                     <p>৳<span>${plants.price}</span></p>
                 </div>  
@@ -211,14 +211,14 @@ const showItemDetails = (plants) => {
 }
 
 const deleteCartItem = (deleteId, deletePrice) => {
-    // cartArr থেকে ফিল্টার করা
+    // cartArr filter
     cartArr = cartArr.filter(item => item.id !== deleteId);
 
     // total থেকে price বাদ দেওয়া
     cartTotal -= deletePrice;
     document.getElementById('cart-total').innerText = cartTotal;
 
-    // DOM থেকে আইটেম রিমুভ করা
+    // ui থেকে আইটেম রিমুভ করা
     const deleteElement = document.getElementById(`cart-${deleteId}`);
     if(deleteElement){
         deleteElement.remove();

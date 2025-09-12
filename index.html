@@ -46,7 +46,7 @@
             </div>
     </header>
     <!-- Banner section  -->
-    <section class="banner   bg-[#CFF0DC] bg-[url(./assets/hero-leaf1.png),url(./assets/hero-leaf2.png)]  bg-no-repeat bg-[position:bottom_left,bottom_right] bg-size-[110px] sm:bg-size-[170px] lg:bg-size-[300px]">
+    <section class="banner   bg-[#CFF0DC] bg-[url(./assets/hero-leaf1.png),url(./assets/hero-leaf2.png)]  bg-no-repeat bg-[position:bottom_left,bottom_right] bg-size-[110px] sm:bg-size-[170px] lg:bg-size-[195px] xl:bg-size-[300px]">
         <div class="content w-11/12 mx-auto py-8 ">
            <div class="flex flex-col justify-center min-h-8 items-center">
                 <h1 class="text-[20px] font-bold sm:text-[30px] md:text-[45px] text-center">Plant a Tree, Grow a Future</h1>
@@ -57,11 +57,11 @@
     </section>
     <!-- main section -->
     <main class="bg-[#F0FDF4]">
-        <div class="title py-[70px]">
-            <h1 class="text-center text-[45px] font-bold">Choose Your Trees</h1>
+        <div class="title py-[30px] lg:py-[60px]">
+            <h1 class="text-center text-[30px] sm:text-[35px] lg:text-[45px] font-semibold sm:font-bold">Choose Your Trees</h1>
         </div>
         <section class="content grid grid-cols-12 gap-2 w-11/12 mx-auto">
-            <div class="col-span-12 lg:col-span-2  p-3">
+            <div class="col-span-12 md:col-span-3 lg:col-span-2">
                 <h2 class="text-[24px] font-medium">Categories</h2>
                  
                 <div id="categoryContainer" class="mt-2">
@@ -70,12 +70,12 @@
                 </button>
                 </div>
             </div>
-            <div class="col-span-12 lg:col-span-7">
-                <div id="card-items" class="grid grid-cols-3 gap-2">
+            <div class="col-span-12 md:col-span-9 lg:col-span-8">
+                <div id="card-items" class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-2">
                     
                 </div>
             </div>
-            <div class="col-span-12 lg:col-span-3 bg-white mt-4 lg:mt-0">
+            <div class="col-span-12 md:col-span-12 lg:col-span-2 bg-white my-4 lg:mt-0">
                 <h2 class="text-[24px] font-medium px-2">Your Cart</h2>
                 <div id="cart-container" class="  px-2">
                     <div class="flex flex-col justify-between items-center">
@@ -83,7 +83,7 @@
                          
                     </div>
                 </div>
-                <div class="flex justify-between items-center px-2 font-bold text-[#15803D] mt-2"> 
+                <div class="flex justify-between items-center px-2 py-3 font-bold text-[#15803D] mt-2"> 
                     <p>Total</p>
                     <p id="cart-total"></p>
                 </div>
@@ -105,6 +105,9 @@
         </div>
         </dialog>
     </main>
+
+    
+  
   
 
 
