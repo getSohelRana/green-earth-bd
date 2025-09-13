@@ -15,7 +15,7 @@ const loadCategory = () => {
 };
 // show category btn items
 const displayCategories = (cat) => {
-    
+
     cat.forEach(cat => {
         // console.log(cat.category_name);
         categoryContainer. innerHTML += `
@@ -25,6 +25,8 @@ const displayCategories = (cat) => {
         `;
 
     });
+
+    // By Categories button  event
     categoryContainer.addEventListener('click' , (e) => {
         // console.log(e)
         const allBtn = document.getElementsByClassName('bg-btn');
@@ -36,6 +38,18 @@ const displayCategories = (cat) => {
             e.target.classList.add('bg-[#15803D]' , 'text-white');
            loadPlantsByCategory(e.target.id)
            showLoading()
+        }
+    })
+
+    // All Plants button  event
+    document.getElementById('all-plants-load').addEventListener('click', (e) => {
+        const allBtn = document.getElementsByClassName('bg-btn');
+        for (const ele of allBtn) {
+            ele.classList.remove('bg-[#15803D]', 'text-white');
+        }
+        if (e.target.localName === 'button') {
+            e.target.classList.add('bg-[#15803D]', 'text-white');
+            showLoading();
         }
     })
     
