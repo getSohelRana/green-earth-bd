@@ -108,11 +108,10 @@ const loadAllPlants = () => {
     .then(data => {
         showAllPlants(data.plants)
     })
-     showLoading()
-     
+    showLoading()  
 }
-//show all plants
 
+//show all plants
 const showAllPlants = (allPlants) => {
     cardsContainer.innerHTML = "";
     allPlants.forEach(plants => {
@@ -243,7 +242,11 @@ const deleteCartItem = (deleteId, deletePrice) => {
 // show loading 
 const showLoading = () => {
     cardsContainer.innerHTML = `
-        <span class="  text-center loading loading-ring loading-xl"></span>
+        <div class="grid grid-cols-6 col-span-12 gap-2 ">
+            <span class="loading loading-ring loading-xl text-green-600 w-3/6 "></span>
+            <span class="loading loading-ring loading-xl text-green-600 w-3/6 "></span>
+            <span class="loading loading-ring loading-xl text-green-600 w-3/6 "></span>
+        </div>
     `;
 }
 
