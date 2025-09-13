@@ -61,7 +61,6 @@ const loadPlantsByCategory = (plantsId) => {
     .then(res => res.json())
     .then(data => {
       showCardItems(data.plants)
-      
     })
 }
 
@@ -79,7 +78,7 @@ const showCardItems = (plants) => {
                 <div class="img-box w-full ">
                     <img src="${plants.image}" alt="" class="w-full h-50 object-cover rounded-tl-lg rounded-tr-lg">
                 </div>
-                <div class="p-3 w-full">
+                <div id = "${plants.id}" class="p-3 w-full">
                     <h2 class="card-title font-bold">${plants.name}</h2>
                     <p class="text-justify my-3">${plants.description}</p>
                     <div class="flex justify-between items-center ">
@@ -96,7 +95,6 @@ const showCardItems = (plants) => {
         `;
         
     })
-    
 }
 
 
@@ -191,7 +189,7 @@ const cartHandler = (e) => {
 
 const itemDetails = (e) => {
     const cardId = e.target.parentNode.id;
-    // console.log(cardId)
+    console.log(cardId)
     // plantsDetails.showModal()
     const url = `https://openapi.programming-hero.com/api/plant/${cardId}`
     fetch(url)
@@ -201,20 +199,20 @@ const itemDetails = (e) => {
     })
 }
 
-const showItemDetails = (plants) => {
+const showItemDetails = (plant) => {
     // console.log(plants.name)
     plantsDetails.showModal();
-     modalContainer.innerHTML = "";
+    modalContainer.innerHTML = "";
     modalContainer.innerHTML = `
         <div class="card-body p-0 bg-white  shadow-md">
             <div class="img-box w-full ">
-                <img src="${plants.image}" alt="" class="w-full h-50 object-cover rounded-tl-lg rounded-tr-lg">
+                <img src="${plant.image}" alt="" class="w-full h-50 object-cover rounded-tl-lg rounded-tr-lg">
             </div>
             <div class="p-3 w-full">
-                <h2 class="card-title font-bold">${plants.name}</h2>
-                <p class="text-justify my-3">${plants.description}</p>
+                <h2 class="card-title font-bold">${plant.name}</h2>
+                <p class="text-justify my-3">${plant.description}</p>
                 <div class="font-bold">
-                    <p>৳<span>${plants.price}</span></p>
+                    <p>৳<span>${plant.price}</span></p>
                 </div>  
             
             </div>
